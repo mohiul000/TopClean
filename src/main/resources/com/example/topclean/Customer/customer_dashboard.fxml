@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="customerBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Customer.customer_dashboardFxmlController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="142.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#dashboardbtnOnAction" prefHeight="25.0" prefWidth="82.0" text="Dashboard" />
+            <Button layoutX="10.0" layoutY="85.0" mnemonicParsing="false" onAction="#profilebtnOnAction" prefHeight="25.0" prefWidth="75.0" text="Profile" />
+            <Button mnemonicParsing="false" onAction="#placeAnOrderbtnOnAction" text="Place An Order" />
+            <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#OrderBtnOnAction" prefHeight="25.0" prefWidth="122.0" text="Orders" />
+            <Button mnemonicParsing="false" onAction="#makePaymentbtnOnAction" prefHeight="25.0" prefWidth="103.0" text="Make Payment" />
+            <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="My Offers" />
+            <Button layoutX="10.0" layoutY="135.0" mnemonicParsing="false" onAction="#wardrobebtnOnAction" prefHeight="25.0" prefWidth="104.0" text="Wardrobe" />
+            <Button mnemonicParsing="false" onAction="#serviceReviewbtnOnAction" prefHeight="25.0" prefWidth="124.0" text="Service Review" />
+            <Button layoutX="10.0" layoutY="110.0" mnemonicParsing="false" onAction="#writeReviewbtnOnAction" prefHeight="25.0" prefWidth="104.0" text="Write A Review" />
+            <Button mnemonicParsing="false" onAction="#signoutbtnOnAction" text="Sign Out" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="544.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="30.0" layoutY="29.0" text="User Name" />
+            <Label layoutX="30.0" layoutY="59.0" text="Email" />
+            <Label layoutX="30.0" layoutY="84.0" text="Phone No" />
+            <Label fx:id="nameL" layoutX="141.0" layoutY="29.0" text="Label" />
+            <Label fx:id="emailL" layoutX="141.0" layoutY="59.0" text="Label" />
+            <Label fx:id="phoneNoL" layoutX="141.0" layoutY="84.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

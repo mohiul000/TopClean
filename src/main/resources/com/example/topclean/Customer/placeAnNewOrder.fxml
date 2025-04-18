@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="510.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Customer.PlaceAnNewOrder">
+   <children>
+      <Label layoutX="249.0" layoutY="21.0" prefHeight="30.0" prefWidth="159.0" text="Order &amp; Wash">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="60.0" text="Choose  Service(s)">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="laundryCkB" layoutX="46.0" layoutY="87.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="200.0" text="Lundry - 120 BDT (Per Kg)" />
+      <CheckBox fx:id="dryCleaingCKB" layoutX="46.0" layoutY="113.0" mnemonicParsing="false" text="Dry Cleaning - 300 BDT (Per Item)" />
+      <CheckBox fx:id="washAndFoldCKB" layoutX="257.0" layoutY="87.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="192.0" text="Wash &amp; Fold - 460 BDT (Per Kg)" />
+      <CheckBox fx:id="ironingCKB" layoutX="258.0" layoutY="113.0" mnemonicParsing="false" text="Ironing - 20 BDT per garment" />
+      <TextArea fx:id="materialTypeTA" layoutX="45.0" layoutY="230.0" prefHeight="130.0" prefWidth="286.0" promptText="Material, Garment/Fabric Type &amp; Care Instructions" />
+      <TextArea fx:id="specialNoteTA" layoutX="382.0" layoutY="229.0" prefHeight="46.0" prefWidth="231.0" promptText="Special Note " />
+      <TextField fx:id="BrandTF" layoutX="497.0" layoutY="118.0" promptText="Brand" />
+      <TextField fx:id="QuantityTF" layoutX="497.0" layoutY="83.0" promptText="Quantity" />
+      <DatePicker fx:id="pickUpDate" layoutX="46.0" layoutY="143.0" promptText="PIck Up Date" />
+      <DatePicker fx:id="DropOfDate" layoutX="253.0" layoutY="143.0" promptText="Drop of Date" />
+      <TextArea fx:id="AddressTA" layoutX="382.0" layoutY="281.0" prefHeight="46.0" prefWidth="231.0" promptText="Address" />
+      <ComboBox fx:id="PaymentTypeCB" layoutX="410.0" layoutY="335.0" prefHeight="25.0" prefWidth="174.0" promptText="Select Payment Type" />
+      <Button layoutX="283.0" layoutY="385.0" mnemonicParsing="false" onAction="#placeAnOrderbtnOnAction" text="Place An Order" />
+      <Label fx:id="statusOutputLabel" layoutX="301.0" layoutY="438.0" text="------------" />
+   </children>
+</AnchorPane>

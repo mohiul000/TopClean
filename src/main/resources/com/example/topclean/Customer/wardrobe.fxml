@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Customer.WardrobeController">
+    <children>
+        <Label layoutX="253.0" layoutY="23.0" text="Wardrobe">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="63.0" layoutY="57.0" prefHeight="25.0" prefWidth="53.0" text="Washed" />
+        <Label layoutX="462.0" layoutY="57.0" prefHeight="25.0" prefWidth="71.0" text="Non-Washed" />
+        <TableView fx:id="washedTV" layoutX="14.0" layoutY="99.0" prefHeight="207.0" prefWidth="150.0">
+            <columns>
+                <TableColumn fx:id="washedClothIDTC" prefWidth="75.0" text="Cloth ID" />
+                <TableColumn fx:id="washedNameTC" prefWidth="75.0" text="Cloth Name" />
+                <TableColumn fx:id="washedDeliveryTC" prefWidth="84.0" />
+            </columns>
+        </TableView>
+        <ComboBox fx:id="UpdateClothIDCB" layoutX="225.0" layoutY="212.0" prefWidth="150.0" promptText="Cloth ID" />
+        <Button layoutX="273.0" layoutY="281.0" mnemonicParsing="false" onAction="#updatebtnOnAction" text="Update" />
+        <TableView fx:id="nonWashedTV" layoutX="422.0" layoutY="97.0" prefHeight="207.0" prefWidth="150.0">
+            <columns>
+                <TableColumn fx:id="nonWashedClothIDTC" prefWidth="75.0" text="Cloth ID" />
+                <TableColumn fx:id="nonWashedClothNameTC" prefWidth="75.0" text="Cloth Name" />
+                <TableColumn fx:id="washedDeliveryTC1" prefWidth="84.0" />
+            </columns>
+        </TableView>
+        <Label layoutX="260.0" layoutY="61.0" text="Add New Cloth" />
+        <TextField fx:id="addNewClothTF" layoutX="226.0" layoutY="85.0" promptText="Cloth Name" />
+        <Button layoutX="265.0" layoutY="120.0" mnemonicParsing="false" onAction="#addNewClothbtnOnAction" text="Add Cloth" />
+        <Label layoutX="247.0" layoutY="183.0" text="Update Cloth Status" />
+        <ComboBox fx:id="washedOrNonWasedTypeCB" layoutX="225.0" layoutY="245.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

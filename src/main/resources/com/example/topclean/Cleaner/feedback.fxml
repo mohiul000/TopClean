@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Cleaner.FeedbackController">
+   <children>
+      <Label layoutX="176.0" layoutY="28.0" text="Feedback From Customers">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="FeedbackTV" layoutX="5.0" layoutY="85.0" prefHeight="293.0" prefWidth="586.0">
+        <columns>
+          <TableColumn fx:id="serviceTC" prefWidth="89.0" text="Service" />
+          <TableColumn fx:id="productDesTC" prefWidth="125.0" text="Product Description" />
+            <TableColumn fx:id="customerCommentTC" prefWidth="173.0" text="Customer Comment" />
+            <TableColumn fx:id="adminCommentTC" prefWidth="198.0" text="Admin Comment" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
