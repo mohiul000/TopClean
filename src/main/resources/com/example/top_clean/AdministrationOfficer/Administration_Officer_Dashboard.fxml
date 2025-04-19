@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPaneId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="537.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.top_clean.AdministrationOfficer.Administration_Officer_DashboardController">
+    <top>
+        <MenuBar id="bevel" prefHeight="48.0" prefWidth="537.0" style="-fx-background-color: #278763;" stylesheets="@../cleaningCrewMember/stylesheet.css" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Employee Section">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#bestEmployeeMenuItemOnClick" text="Announce Best Employee" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Services">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#qualityControlMenuItemOnClick" text="Quality Control" />
+                        <MenuItem mnemonicParsing="false" onAction="#developementPlanMenuItemOnClick" text="Developement Plan" />
+                        <MenuItem mnemonicParsing="false" onAction="#monthlyMaintenanceMenuItemOnClick" text="Monthly maintenance." />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Issue/Request">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Issue a Complaint" />
+
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Notice/Log Out">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#sendNoticeMenuItemOnClick" text="Send Notice" />
+                        <MenuItem mnemonicParsing="false" text="Help" />
+                        <MenuItem mnemonicParsing="false" onAction="#logOutMenuItemOnClick" text="Log Out" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a4bcb3;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="5.0" layoutY="187.0" text="Just dont make the company go bankrupt.">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="29.0" text="Welcome to the Dashboard">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label layoutX="8.0" layoutY="152.0" prefHeight="27.0" prefWidth="326.0" text="Use your powerful Ctrl + Z spell any time">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="86.0" prefWidth="537.0" style="-fx-background-color: #a4bcb3;" BorderPane.alignment="CENTER" />
+    </bottom>
+    <right>
+        <AnchorPane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #a4bcb3;" BorderPane.alignment="CENTER" />
+    </right>
+</BorderPane>

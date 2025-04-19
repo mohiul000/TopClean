@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="475.0" prefWidth="600.0" style="-fx-background-color: #FCDDB0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.top_clean.AccountOfficer.SalaryPieChartController">
+   <children>
+      <PieChart id="bevel" fx:id="pieChartSalary" layoutX="12.0" layoutY="113.0" prefHeight="348.0" prefWidth="571.0" style="-fx-background-color: beige;" stylesheets="@../cleaningCrewMember/stylesheet.css" />
+      <Pane id="bevel" layoutX="14.0" layoutY="15.0" prefHeight="85.0" prefWidth="571.0" style="-fx-background-color: beige;" stylesheets="@../cleaningCrewMember/stylesheet.css" />
+      <Label layoutX="92.0" layoutY="35.0" prefHeight="46.0" prefWidth="407.0" text="Employee Salary Pie Chart" textFill="RED">
+         <font>
+            <Font name="Segoe UI Semibold Italic" size="34.0" />
+         </font>
+      </Label>
+      <Line endX="323.0" layoutX="182.0" layoutY="85.0" startX="-100.0" />
+   </children>
+</AnchorPane>

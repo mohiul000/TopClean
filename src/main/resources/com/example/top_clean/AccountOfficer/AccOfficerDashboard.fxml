@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPaneId" prefHeight="486.0" prefWidth="740.0" style="-fx-background-color: #E8D3CE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.top_clean.AccountOfficer.AccOfficerDashboardController">
+    <top>
+        <MenuBar id="blue" prefHeight="39.0" prefWidth="740.0" style="-fx-background-color: #C69774;"
+                 stylesheets="@../cleaningCrewMember/stylesheet.css" BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Transactions">
+                <MenuItem mnemonicParsing="false" onAction="#GoToCompensationMenuItemButton"
+                          text="Compensation Details"/>
+                <MenuItem mnemonicParsing="false" onAction="#switchToNetSalaryButton" text="Net Salary Calculator"/>
+                <MenuItem mnemonicParsing="false" onAction="#switchToPieChartButtonOnClicked"
+                          text="Show pie chart salary"/>
+                <MenuItem mnemonicParsing="false" onAction="#switchToTransactionButton"
+                          text="Add Bill to Transaction"/>
+                <MenuItem mnemonicParsing="false" onAction="#switchToTransactionButton"
+                          text="Show Transaction Records"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Profit Scaling">
+                <MenuItem mnemonicParsing="false" onAction="#switchToProfileScalingMeniItemButton"
+                          text="Show Bar Chart"/>
+            </Menu>
+            <Menu mnemonicParsing="false" onAction="#switchToVendorpanelButton" text="Vendor Informations">
+                <MenuItem mnemonicParsing="false" onAction="#switchToVendorMenuItemButton" text="Show Records"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Others">
+                <MenuItem mnemonicParsing="false" onAction="#applyLeaveMenuItemOnClicked" text="Apply For Leave"/>
+                <MenuItem mnemonicParsing="false" onAction="#viewNoticeMenuItemOnCLlcked" text="View Notice"/>
+                <MenuItem mnemonicParsing="false" onAction="#logOutMenuItemOnClicked" text="Log Out"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <right>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFBF5;" BorderPane.alignment="CENTER" />
+    </right>
+    <bottom>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFBF5;" BorderPane.alignment="CENTER" />
+    </bottom>
+    <center>
+        <AnchorPane prefHeight="395.0" prefWidth="713.0" style="-fx-background-color: #F7EFE5;"
+                    BorderPane.alignment="CENTER">
+            <Label layoutX="143.0" layoutY="14.0" prefHeight="33.0" prefWidth="284.0" text="Account Officer Dashboard">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </Label>
+            <ImageView fx:id="accountOfficerImageView" fitHeight="150.0" fitWidth="166.0" layoutX="43.0" layoutY="66.0"
+                       pickOnBounds="true" preserveRatio="true"/>
+            <Label layoutX="243.0" layoutY="88.0" text="Name :">
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="243.0" layoutY="144.0" text="Email :">
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="243.0" layoutY="173.0" text="Contact No :">
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="243.0" layoutY="116.0" text="Gender :">
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="349.0" layoutY="88.0" text="Mr. Syed Al Kawser"/>
+            <Label layoutX="393.0" layoutY="116.0" text="Male"/>
+            <Label layoutX="341.0" layoutY="144.0" text="SyedAhad@gmail.com"/>
+            <Label layoutX="366.0" layoutY="174.0" text="01721327900"/>
+            <Line endX="168.0" layoutX="240.0" layoutY="47.0" startX="-129.0">
+                <stroke>
+                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                        <stops>
+                            <Stop color="#9c6a4f"/>
+                            <Stop color="#5ea470" offset="1.0"/>
+                        </stops>
+                    </RadialGradient>
+                </stroke>
+            </Line>
+        </AnchorPane>
+    </center>
+</BorderPane>
