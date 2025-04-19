@@ -1,19 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.example.top_clean.AdministrationOfficer;
 
 import java.io.Serializable;
 
 public class bestEmployeeModel implements Serializable {
-    protected String name,department;
-    protected int code;
+    private String empId;
+    private String name;
+    private String department;
+    private int totalTasks;
+    private int completedTasks;
 
-    public bestEmployeeModel(String name, String department, int code) {
+    // Constructor
+    public bestEmployeeModel(String empId, String name, String department, int totalTasks, int completedTasks) {
+        this.empId = empId;
         this.name = name;
         this.department = department;
-        this.code = code;
+        this.totalTasks = totalTasks;
+        this.completedTasks = completedTasks;
+    }
+
+    // Getters and Setters
+    public String getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(String empId) {
+        this.empId = empId;
     }
 
     public String getName() {
@@ -32,21 +43,29 @@ public class bestEmployeeModel implements Serializable {
         this.department = department;
     }
 
-    public int getCode() {
-        return code;
+    public int getTotalTasks() {
+        return totalTasks;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setTotalTasks(int totalTasks) {
+        this.totalTasks = totalTasks;
     }
 
+    public int getCompletedTasks() {
+        return completedTasks;
+    }
+
+    public void setCompletedTasks(int completedTasks) {
+        this.completedTasks = completedTasks;
+    }
+
+    // toString method to display employee details
     @Override
     public String toString() {
-        return "The Best Employee is : " + name + "\n"
-                +" Department : " + department  + "\n"
-                +"Employee code : " + code;
+        return "Employee ID: " + empId + "\n" +
+                "Name: " + name + "\n" +
+                "Department: " + department + "\n" +
+                "Total Tasks: " + totalTasks + "\n" +
+                "Completed Tasks: " + completedTasks + "\n\n";
     }
-
-
-
 }

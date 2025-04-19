@@ -8,24 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="557.0" style="-fx-background-color: #a4bcb3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.top_clean.AdministrationOfficer.BestEmployeeController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="557.0" style="-fx-background-color: #a4bcb3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.top_clean.AdministrationOfficer.BestEmployeeController">
     <children>
-        <Button layoutX="14.0" layoutY="57.0" mnemonicParsing="false" onAction="#showPerformanceScoreButtonOnClicked" prefHeight="31.0" prefWidth="189.0" text="Show performance score" />
         <Button layoutX="51.0" layoutY="316.0" mnemonicParsing="false" onAction="#doneShowButtonOnClicked" prefHeight="60.0" prefWidth="100.0" text="Done &amp; show" textAlignment="CENTER" wrapText="true" />
-        <TextArea fx:id="performanceTextArea" layoutX="14.0" layoutY="106.0" prefHeight="117.0" prefWidth="531.0" />
         <TextField fx:id="announceTextField" layoutX="12.0" layoutY="268.0" prefHeight="31.0" prefWidth="157.0" promptText="Enter Name" />
-        <Label layoutX="197.0" layoutY="236.0" text="Announce Best Employee">
+        <Label layoutX="189.0" layoutY="56.0" text="Announce Best Employee">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
         <TextArea fx:id="ShowBestemployeeTextArea" layoutX="183.0" layoutY="307.0" prefHeight="81.0" prefWidth="356.0" />
-        <Label layoutX="217.0" layoutY="22.0" prefHeight="27.0" prefWidth="124.0" text="Best employee">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <TextField fx:id="announceCodeTextField" layoutX="395.0" layoutY="268.0" prefHeight="31.0" prefWidth="157.0" promptText="Enter code" />
         <ComboBox fx:id="departmentCombobox" layoutX="205.0" layoutY="268.0" prefWidth="150.0" promptText="Department" />
     </children>
 </AnchorPane>

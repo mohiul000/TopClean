@@ -1,14 +1,10 @@
-
-
-module com.example.simulatingoperationsofanewspaper {
+module com.example.top_clean {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.logging; // <- This is what you need to add
 
-    // Allow FXML to access these packages
     opens com.example.top_clean to javafx.fxml;
     opens com.example.top_clean.AdministrationOfficer to javafx.fxml;
-
-    // Export main package (optional)
     exports com.example.top_clean;
+    exports com.example.top_clean.AdministrationOfficer;
 }
-
