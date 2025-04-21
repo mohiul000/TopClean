@@ -25,7 +25,7 @@ public class ServiceReviews {
 
     private static final String REVIEWS_FILE = "reviews.bin";
     private ObservableList<Review> reviewList = FXCollections.observableArrayList();
-    private int customerId; // To store the logged-in customer's ID
+    private int customerId; // To store the logged in customer s ID
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;

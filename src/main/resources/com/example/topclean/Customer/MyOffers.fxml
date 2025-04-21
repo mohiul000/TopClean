@@ -6,20 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Customer.MyOffers">
+<AnchorPane prefHeight="366.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Customer.MyOffers">
    <children>
-      <Label layoutX="253.0" layoutY="35.0" text="My Offers">
+      <Label layoutX="253.0" layoutY="14.0" text="My Offers">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="MyOffersTV" layoutX="133.0" layoutY="77.0" prefHeight="200.0" prefWidth="334.0">
+      <TableView fx:id="MyOffersTV" layoutX="18.0" layoutY="65.0" prefHeight="260.0" prefWidth="564.0">
         <columns>
-          <TableColumn fx:id="MyOfferServiceTC" prefWidth="75.0" text="Service" />
-          <TableColumn fx:id="MyOfferMainPriceTC" text="Main Price" />
-            <TableColumn fx:id="DiscountPriceTC" prefWidth="89.0" text="Discount Price" />
-            <TableColumn fx:id="OfferendsInTC" prefWidth="89.0" text="Offer Ends In" />
+          <TableColumn fx:id="MyOfferServiceTC" prefWidth="160.0" text="Service" />
+          <TableColumn fx:id="MyOfferMainPriceTC" prefWidth="82.0" text="Main Price" />
+            <TableColumn fx:id="DiscountPriceTC" minWidth="0.0" prefWidth="122.0" text="Discount Price" />
+            <TableColumn fx:id="OfferendsInTC" prefWidth="194.0" text="Offer Ends In" />
         </columns>
       </TableView>
    </children>

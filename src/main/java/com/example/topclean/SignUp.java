@@ -1,6 +1,8 @@
 package com.example.topclean;
 
+import com.example.topclean.Cleaner.Cleaner;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -15,49 +17,61 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class SignUp
-{
-    @javafx.fxml.FXML
+public class SignUp {
+    @FXML
     private TextField phoneTF;
-    @javafx.fxml.FXML
+    @FXML
     private TextArea addressTA;
-    @javafx.fxml.FXML
+    @FXML
     private TextArea showTA;
-    @javafx.fxml.FXML
+    @FXML
     private TextField nameTF;
-    @javafx.fxml.FXML
+    @FXML
     private TextField emailTF;
-    @javafx.fxml.FXML
+    @FXML
     private ComboBox<String> userTypeCB;
-    @javafx.fxml.FXML
+    @FXML
     private PasswordField passwordPF;
-    @javafx.fxml.FXML
+    @FXML
     private DatePicker dobDP;
-
+    @FXML
+    private TextField skillsTF;
+    @FXML
+    private TextField experienceTF;
 
     private static final String USERS_FILE = "users.bin";
 
-
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
-
         userTypeCB.getItems().addAll("Customer", "Cleaner");
     }
 
-    @javafx.fxml.FXML
+    @FXML
+    public void userTypeCBOnAction(ActionEvent event) {
+        String userType = userTypeCB.getValue();
+        if ("Cleaner".equals(userType)) {
+            skillsTF.setVisible(true);
+            experienceTF.setVisible(true);
+        } else {
+            skillsTF.setVisible(false);
+            experienceTF.setVisible(false);
+        }
+    }
+
+    @FXML
     public void backToLoginbtnOnAction(ActionEvent actionEvent) throws IOException {
         Parent root = null;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
-        Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Login Page");
         stage.setScene(scene);
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void createbtnOnAction(ActionEvent actionEvent) {
         String name = nameTF.getText();
         String email = emailTF.getText();
@@ -66,34 +80,34 @@ public class SignUp
         String userType = userTypeCB.getValue();
         String password = passwordPF.getText();
         String address = addressTA.getText();
+        String skills = (skillsTF != null) ? skillsTF.getText() : "";
+        String experience = (experienceTF != null) ? experienceTF.getText() : "";
 
         if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || dob == null || userType == null || password.isEmpty() || address.isEmpty()) {
             showTA.setText("Please fill in all the fields.");
             return;
         }
 
-        // Generate User ID
+        // / Generate User ID
         Random random = new Random();
         int id;
-        if (userType.equals("Customer")) {
-            id = 10000 + random.nextInt(90000); // Generates a 5-digit number
-        } else { // Cleaner
-            id = 100000 + random.nextInt(900000); // Generates a 6-digit number
-        }
+        User newUser; // setting user obj
 
-        User newUser = new User(id, name, email, phone, password, userType, address, dob);
+        if (userType.equals("Customer")) {
+            id = 1000 + random.nextInt(90000); // Generates a 5-digit number for customer
+            newUser = new User(id, name, email, password, address, dob, Login.UserType.CUSTOMER, phone);
+        } else if (userType.equals("Cleaner")) {
+            id = 100000 + random.nextInt(900000); // Generates a 6-digit number for cleaner
+            newUser = new Cleaner(id, name, email, password, address, dob, Login.UserType.CLEANER, skills, experience, phone);
+        } else {
+            showTA.setText("Invalid user type. Please select Customer or Cleaner.");
+            return;
+        }
 
 
         if (saveUserToFile(newUser)) {
             showTA.setText("Account created successfully! Your User ID is: " + id + ". Please use this ID to log in.");
-
-            nameTF.clear();
-            emailTF.clear();
-            phoneTF.clear();
-            dobDP.setValue(null);
-            userTypeCB.setValue(null);
-            passwordPF.clear();
-            addressTA.clear();
+            clearFields();
         } else {
             showTA.setText("Failed to create account. Please try again.");
         }
@@ -114,4 +128,19 @@ public class SignUp
             return false;
         }
     }
+
+    private void clearFields() {
+        nameTF.clear();
+        emailTF.clear();
+        phoneTF.clear();
+        dobDP.setValue(null);
+        userTypeCB.setValue(null);
+        passwordPF.clear();
+        addressTA.clear();
+        if (skillsTF != null && experienceTF != null) {
+            skillsTF.clear();
+            experienceTF.clear();
+        }
+    }
 }
+

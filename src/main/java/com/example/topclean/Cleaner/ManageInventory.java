@@ -91,7 +91,7 @@ public class ManageInventory {
             boolean itemExists = false;
             for (int i = 0; i < inventoryList.size(); i++) {
                 if (inventoryList.get(i).getItemName().equals(itemName)) {
-                    inventoryList.set(i, newItem); // Update alreay have in inventory item
+                    inventoryList.set(i, newItem); // update alreay have in inventory item
                     itemExists = true;
                     break;
                 }

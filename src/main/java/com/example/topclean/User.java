@@ -4,19 +4,28 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class User implements Serializable {
+    private static final long serialVersionUID = 2L;
     private int id;
-    private String name, email, pN, password, type, address;
+    private String name;
+    private String email;
+    private String password;
+    private String address;
     private LocalDate dob;
+    private Login.UserType type;
+    private String phone;
 
-    public User(int id, String name, String email, String pN, String password, String type, String address, LocalDate dob) {
+    public User() {
+    }
+
+    public User(int id, String name, String email, String password, String address, LocalDate dob, Login.UserType type, String phone) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.pN = pN;
         this.password = password;
-        this.type = type;
         this.address = address;
         this.dob = dob;
+        this.type = type;
+        this.phone = phone;
     }
 
     public int getId() {
@@ -43,28 +52,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getpN() {
-        return pN;
-    }
-
-    public void setpN(String pN) {
-        this.pN = pN;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getAddress() {
@@ -81,5 +74,21 @@ public class User implements Serializable {
 
     public void setDob(LocalDate dob) {
         this.dob = dob;
+    }
+
+    public Login.UserType getType() {
+        return type;
+    }
+
+    public void setType(Login.UserType type) {
+        this.type = type;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

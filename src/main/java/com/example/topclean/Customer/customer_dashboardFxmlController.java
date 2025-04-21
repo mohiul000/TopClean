@@ -14,6 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class customer_dashboardFxmlController {
 
@@ -29,6 +30,8 @@ public class customer_dashboardFxmlController {
     private User loggedInUser;
     private Login loginControllerInstance;
     private OrdersController ordersController;
+    @FXML
+    private Label UserIDL;
 
     public void setLoginController(Login loginController) {
         this.loginControllerInstance = loginController;
@@ -40,7 +43,8 @@ public class customer_dashboardFxmlController {
         if (user != null) {
             nameL.setText(user.getName());
             emailL.setText(user.getEmail());
-            phoneNoL.setText(user.getpN());
+            phoneNoL.setText(user.getPhone());
+            UserIDL.setText(String.valueOf(user.getId()));
         }
     }
 
@@ -195,4 +199,22 @@ public class customer_dashboardFxmlController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void myOfferbtnOnAction(ActionEvent actionEvent) {
+        System.out.println("My Offer button clicked");
+
+        try {
+            URL location = getClass().getResource("/com/example/topclean/Customer/MyOffers.fxml");
+            FXMLLoader fxmlLoader = new FXMLLoader(location);
+            Parent myOffersRoot = fxmlLoader.load();
+            MyOffers myOffersController = fxmlLoader.getController();
+
+            //  if in future data passing  myOffersController.setCustomerId(loggedInUser.getId());
+            customerBP.setCenter(myOffersRoot);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+

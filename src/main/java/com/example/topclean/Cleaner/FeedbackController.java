@@ -16,15 +16,15 @@ import java.io.ObjectInputStream;
 public class FeedbackController {
 
     @FXML
-    private TableView<Review> FeedbackTV; // Use the Review class
+    private TableView<Review> FeedbackTV;
     @FXML
     private TableColumn<Review, String> serviceTC;
     @FXML
-    private TableColumn<Review, String> productDesTC; // Assuming this maps to Review's description
+    private TableColumn<Review, String> productDesTC;
     @FXML
-    private TableColumn<Review, String> customerCommentTC; // Assuming this maps to Review's comment
+    private TableColumn<Review, String> customerCommentTC;
     @FXML
-    private TableColumn<Review, String> adminCommentTC; // You'll need to add this to the Review class if you want to store admin comments
+    private TableColumn<Review, String> adminCommentTC;
 
     private static final String REVIEWS_FILE = "reviews.bin";
     private ObservableList<Review> feedbackList = FXCollections.observableArrayList();
@@ -34,7 +34,7 @@ public class FeedbackController {
         serviceTC.setCellValueFactory(new PropertyValueFactory<>("service"));
         productDesTC.setCellValueFactory(new PropertyValueFactory<>("description"));
         customerCommentTC.setCellValueFactory(new PropertyValueFactory<>("comment"));
-        adminCommentTC.setCellValueFactory(new PropertyValueFactory<>("")); // Initially empty, you'll likely add functionality to set this
+        adminCommentTC.setCellValueFactory(new PropertyValueFactory<>(""));
 
         FeedbackTV.setItems(feedbackList);
         loadFeedback();
@@ -70,6 +70,5 @@ public class FeedbackController {
         }
     }
 
-    // You might add methods here to allow cleaners/admins to add admin comments
-    // and save them back to the reviews.bin file if needed.
+
 }

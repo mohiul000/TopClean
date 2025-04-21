@@ -102,7 +102,7 @@ public class PlaceAnNewOrder {
         Random random = new Random();
         int orderId = random.nextInt(1000000);
 
-        Order newOrder = new Order(orderId, this.customerId, selectedServices, materialType, specialNote, brand, quantity, pickUp, dropOff, address, payment, orderDate); // Using customerId here
+        Order newOrder = new Order(orderId, this.customerId, selectedServices, materialType, specialNote, brand, quantity, pickUp, dropOff, address, payment, orderDate); // uusing customerId here
 
         if (saveOrderToFile(newOrder)) {
             statusOutputLabel.setText("Order placed successfully! Order ID: " + orderId);

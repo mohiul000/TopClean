@@ -25,7 +25,7 @@ public class WriteAreview
     private TextArea revDescription;
 
     private static final String REVIEWS_FILE = "reviews.bin";
-    private int customerId; // To store the logged-in customer's ID
+    private int customerId; // To store the logged in customer s ID
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,7 +62,7 @@ public class WriteAreview
         }
     }
 
-    private boolean saveReviewToFile(Review review) { // Moved outside AddReviewbtnOnAction
+    private boolean saveReviewToFile(Review review) {
         File file = new File(REVIEWS_FILE);
         boolean append = file.exists();
 
@@ -76,7 +76,7 @@ public class WriteAreview
         }
     }
 
-    private void clearInputFields() { // Moved outside AddReviewbtnOnAction
+    private void clearInputFields() {
         revService.clear();
         revDescription.clear();
         revComment.clear();

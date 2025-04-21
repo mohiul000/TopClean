@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.topclean.Cleaner.SetAvailability"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Cleaner.SetAvailability">
+   <children>
+      <Label layoutX="233.0" layoutY="26.0" text="Set Availability">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="63.0" text="Set A New Slot" />
+      <DatePicker fx:id="dayDP" layoutX="25.0" layoutY="86.0" promptText="Day ?" />
+      <TextField fx:id="timeTF" layoutX="25.0" layoutY="119.0" promptText="When ? ex: 6 AM to 5 PM" />
+      <Button layoutX="64.0" layoutY="158.0" mnemonicParsing="false" onAction="#setSlotbtnOnAction" text="Set Slot" />
+      <TableView fx:id="slotsTV" layoutX="346.0" layoutY="80.0" prefHeight="220.0" prefWidth="235.0">
+        <columns>
+          <TableColumn fx:id="slotIDTC" prefWidth="75.0" text="Slot ID" />
+          <TableColumn fx:id="dateTC" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="timeTC" prefWidth="83.0" text="Time" />
+        </columns>
+      </TableView>
+      <Label layoutX="451.0" layoutY="55.0" text="Slots" />
+   </children>
 </AnchorPane>

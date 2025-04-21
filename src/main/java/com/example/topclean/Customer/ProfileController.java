@@ -33,12 +33,12 @@ public class ProfileController {
     @FXML
     private Label userIdL;
     @FXML
-    private Label passwordL;
-    @FXML
     private Label ProfileUpdateL;
 
     private User currentUser;
     private Login loginController;
+    @FXML
+    private Label passwordL;
 
     public void setLoginController(Login loginController) {
         this.loginController = loginController;

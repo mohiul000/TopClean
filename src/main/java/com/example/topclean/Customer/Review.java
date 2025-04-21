@@ -46,5 +46,5 @@ public class Review implements Serializable {
         return reviewDate;
     }
 
-    // Setters (if needed)
+
 }

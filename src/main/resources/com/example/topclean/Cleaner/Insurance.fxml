@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.topclean.Cleaner.Insurance"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.topclean.Cleaner.InsuranceController">
+   <children>
+      <Label layoutX="264.0" layoutY="23.0" text="Insurance">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="56.0" text="Insurance Calculator" />
+      <Label layoutX="438.0" layoutY="56.0" text="Apply For Insurance" />
+      <TextField fx:id="ageTF" layoutX="47.0" layoutY="84.0" promptText="Age" />
+      <TextField fx:id="InstallmentTF" layoutX="47.0" layoutY="116.0" promptText="Installment Duration" />
+      <TextField fx:id="installmentAmount" layoutX="47.0" layoutY="154.0" promptText="Installment Amout" />
+      <Label layoutX="44.0" layoutY="231.0" text="Result" />
+      <Button layoutX="86.0" layoutY="188.0" mnemonicParsing="false" onAction="#calcbtnOnAction" text="Calculate" />
+      <Label fx:id="resultL" layoutX="98.0" layoutY="231.0" text="--------" />
+      <Button layoutX="465.0" layoutY="97.0" mnemonicParsing="false" onAction="#applybtnOnAction" text="Apply" />
+   </children>
 </AnchorPane>
